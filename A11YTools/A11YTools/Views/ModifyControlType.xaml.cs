@@ -31,14 +31,19 @@ namespace A11YTools.Views
                 _a11yService.SetControlType(button, ControlType.Button);
                 _a11yService.SetIsClickable(clickable, true, async () =>
                 {
-                    await DisplayAlert("Yay", "Way to click me", "Cancel");
+                    await DisplayAlert("I only execute on Android", "Way to click me", "Cancel");
                 });
             });
         }
 
-        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private async void OnButtonTapped(object sender, EventArgs e)
         {
             await DisplayAlert("Yay", "Thank you for clicking me", "Cancel");
+        }
+
+        private async void OnButtonClicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("I only execute on iOS", "Thank you for clicking me", "Cancel");
         }
     }
 }

@@ -8,7 +8,7 @@
                          AutomationProperties.IsInAccessibleTree="True"                         
                          AutomationProperties.HelpText="I am a Button">
                 <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnButtonTapped"></TapGestureRecognizer>
                 </StackLayout.GestureRecognizers>
                 <Label Text="Stack"
                 VerticalOptions="CenterAndExpand" 
@@ -24,6 +24,9 @@
                 AutomationProperties.IsInAccessibleTree="True"
                 AutomationProperties.HelpText="I am a Clickable" 
                 x:Name="clickable">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnButtonClicked"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
                 <Label Text="Stack"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
@@ -35,7 +38,7 @@
                 HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <TimePicker BackgroundColor="Purple"></TimePicker>
-            <Button Text="I am a button"></Button>
+            <Button Text="I am a The Thing"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
