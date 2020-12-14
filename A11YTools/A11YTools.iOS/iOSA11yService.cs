@@ -30,7 +30,7 @@ namespace A11YTools.iOS
             }
         }
 
-        public void SetIsClickable(VisualElement element, bool isClickable)
+        public void SetIsClickable(VisualElement element, bool isClickable, Action action)
         {
             if(isClickable)
                 SetControlType(element, ControlType.Button);

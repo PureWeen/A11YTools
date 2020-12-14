@@ -4,7 +4,9 @@
              x:Class="A11YTools.Views.ModifyControlType">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout x:Name="button" AutomationProperties.HelpText="I am a Button">
+            <StackLayout x:Name="button" 
+                         AutomationProperties.IsInAccessibleTree="True"                         
+                         AutomationProperties.HelpText="I am a Button">
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
                 </StackLayout.GestureRecognizers>
@@ -18,7 +20,10 @@
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             </StackLayout>
-            <StackLayout AutomationProperties.HelpText="I am a Clickable" x:Name="clickable">
+            <StackLayout 
+                AutomationProperties.IsInAccessibleTree="True"
+                AutomationProperties.HelpText="I am a Clickable" 
+                x:Name="clickable">
                 <Label Text="Stack"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />

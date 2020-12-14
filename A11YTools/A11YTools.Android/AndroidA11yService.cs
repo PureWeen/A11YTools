@@ -18,7 +18,6 @@ namespace A11YTools.Droid
             if (view == null)
                 return;
 
-            view.ImportantForAccessibility = ImportantForAccessibility.Yes;
             if (controlType == ControlType.Default)
                 view.SetAccessibilityDelegate(null);
             else
