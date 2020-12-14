@@ -1,15 +1,5 @@
-﻿using System;
-using Xamarin.Forms;
-
-namespace A11YTools
-{
-    public enum ControlType
-    {
-        Default,
-        Button
-    }
-
-    public interface IA11yService
+```C#
+public interface IA11yService
     {
         /// <summary>
         /// Force accessibility focus to specified element
@@ -33,4 +23,4 @@ namespace A11YTools
         /// <param name="isClickable">Null resets element to the default</param>
         void SetIsClickable(VisualElement element, bool isClickable, Action clicked);
     }
-}
+ ```
