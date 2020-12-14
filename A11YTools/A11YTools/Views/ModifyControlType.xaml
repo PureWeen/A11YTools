@@ -4,17 +4,32 @@
              x:Class="A11YTools.Views.ModifyControlType">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout x:Name="button">
-                <Label Text="Stack Layout Button"
+            <StackLayout x:Name="button" AutomationProperties.HelpText="I am a Button">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped"></TapGestureRecognizer>
+                </StackLayout.GestureRecognizers>
+                <Label Text="Stack"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Layout"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Button"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             </StackLayout>
-            <StackLayout x:Name="clickable">
-                <Label Text="Stack Layout Clickable"
+            <StackLayout AutomationProperties.HelpText="I am a Clickable" x:Name="clickable">
+                <Label Text="Stack"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Layout"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+                <Label Text="Clickable"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
             </StackLayout>
-            <TimePicker></TimePicker>
+            <TimePicker BackgroundColor="Purple"></TimePicker>
             <Button Text="I am a button"></Button>
         </StackLayout>
     </ContentPage.Content>

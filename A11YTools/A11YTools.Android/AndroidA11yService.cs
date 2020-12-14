@@ -13,11 +13,12 @@ namespace A11YTools.Droid
         public void SetControlType(VisualElement element, ControlType controlType)
         {
             var renderer = Platform.GetRenderer(element);
-            var view = renderer.View;
+            var view = GetView(element);
             
             if (view == null)
                 return;
 
+            view.ImportantForAccessibility = ImportantForAccessibility.Yes;
             if (controlType == ControlType.Default)
                 view.SetAccessibilityDelegate(null);
             else
@@ -40,20 +41,25 @@ namespace A11YTools.Droid
                 {
                     case ControlType.Button:
                         info.ClassName = "android.widget.Button";
+                       // info.ContentDescription = "I am the description";
                         info.Clickable = true;
-                        info.Focusable = true;
                         break;
                 }
             }
         }
 
-        public void SetIsClickable(VisualElement element, bool isClickable)
+        public void SetIsClickable(VisualElement element, bool isClickable, System.Action action)
         {
             var renderer = Platform.GetRenderer(element);
             var view = GetView(element);
             if (view == null)
                 return;
 
+            view.Clickable = isClickable;
+            view.Click += (_, __) =>
+            {
+                action?.Invoke();
+            };
         }
 
         public void SetFocus(VisualElement element)
@@ -68,7 +74,9 @@ namespace A11YTools.Droid
         {
             var renderer = Platform.GetRenderer(visualElement);
 
-            if (renderer is ViewGroup vg && vg.ChildCount > 0)
+            if (visualElement is Layout)
+                return renderer?.View;
+            else if (renderer is ViewGroup vg && vg.ChildCount > 0)
                 return vg.GetChildAt(0);
             else if (renderer != null)
                 return renderer.View;

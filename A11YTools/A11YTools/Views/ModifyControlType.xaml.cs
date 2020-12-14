@@ -24,12 +24,21 @@ namespace A11YTools.Views
             base.OnAppearing();
 
             // the renderers need to have been set for this code to work
+            // This is temporary just to validate that the methods work
             Device.BeginInvokeOnMainThread(async () =>
             {
                 await Task.Delay(1000);
                 _a11yService.SetControlType(button, ControlType.Button);
-                _a11yService.SetIsClickable(clickable, true);
+                _a11yService.SetIsClickable(clickable, true, async () =>
+                {
+                    await DisplayAlert("Yay", "Way to click me", "Cancel");
+                });
             });
+        }
+
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            await DisplayAlert("Yay", "Thank you for clicking me", "Cancel");
         }
     }
 }
