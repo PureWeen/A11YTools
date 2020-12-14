@@ -38,7 +38,7 @@
                 HorizontalOptions="CenterAndExpand" />
             </StackLayout>
             <TimePicker BackgroundColor="Purple"></TimePicker>
-            <Button Text="I am a The Thing"></Button>
+            <Button Text="Hello"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

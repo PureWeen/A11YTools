@@ -19,7 +19,7 @@ namespace A11YTools.iOS
         {
             var nativeView = Platform.GetRenderer(element).NativeView;
 
-            switch(controlType)
+            switch (controlType)
             {
                 case ControlType.Button:
                     nativeView.AccessibilityTraits = UIAccessibilityTrait.Button;
@@ -32,10 +32,15 @@ namespace A11YTools.iOS
 
         public void SetIsClickable(VisualElement element, bool isClickable, Action action)
         {
-            if(isClickable)
+            
+            if (isClickable)
+            {
                 SetControlType(element, ControlType.Button);
+            }
             else
+            {
                 SetControlType(element, ControlType.Default);
+            }
         }
     }
 }

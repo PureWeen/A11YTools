@@ -1,3 +1,13 @@
+I am currently using this as a repository to test and have conversations around useful APIs that we can add to Xamarin.Forms to help users achieve accessibility goals.
+This repository also works as a way to demonstrate various workarounds for your own app.
+
+Please feel free to log issues if you have any questions or if you have additional APIs you would like to see. 
+
+If you would like to make a contribution please feel free to create a PR.
+
+The APIs in this project are all a work in progress that, once validated enough, will be added to Xamarin.Forms
+
+
 ```C#
 public interface IA11yService
     {
@@ -21,6 +31,6 @@ public interface IA11yService
         /// </summary>
         /// <param name="element"></param>
         /// <param name="isClickable">Null resets element to the default</param>
-        void SetIsClickable(VisualElement element, bool isClickable, Action clicked);
+        void SetIsClickable(VisualElement element, bool isClickable, Action clickActionThatOnlyRunsOnAndroid);
     }
  ```

@@ -40,7 +40,6 @@ namespace A11YTools.Droid
                 {
                     case ControlType.Button:
                         info.ClassName = "android.widget.Button";
-                       // info.ContentDescription = "I am the description";
                         info.Clickable = true;
                         break;
                 }

@@ -31,6 +31,6 @@ namespace A11YTools
         /// </summary>
         /// <param name="element"></param>
         /// <param name="isClickable">Null resets element to the default</param>
-        void SetIsClickable(VisualElement element, bool isClickable, Action clicked);
+        void SetIsClickable(VisualElement element, bool isClickable, Action clickActionThatOnlyRunsOnAndroid);
     }
 }
