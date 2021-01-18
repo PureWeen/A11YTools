@@ -32,7 +32,7 @@ namespace A11YTools.iOS
             var viewOrder = AccessibilityContentView.ViewOrder;
 
             List<NSObject> returnValue = new List<NSObject>();
-            foreach(var view in viewOrder)
+            foreach(View view in viewOrder)
             {
                 returnValue.Add(Platform.GetRenderer(view).NativeView);
             }

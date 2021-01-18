@@ -34,7 +34,7 @@ namespace A11YTools.Droid
 
         void SetAccessibilityElements()
         {
-            var viewOrder = AccessibilityContentView.ViewOrder;
+            var viewOrder = AccessibilityContentView.ViewOrder.OfType<View>().ToList();
 
             for (int i = 1; i < viewOrder.Count; i++)
             {
