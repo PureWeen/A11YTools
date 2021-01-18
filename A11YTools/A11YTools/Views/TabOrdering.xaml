@@ -5,26 +5,29 @@
              xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Core"
              x:Class="A11YTools.Views.TabOrdering">
     <ContentPage.Content>
-        <local:AccessibilityContentView x:Name="acv">
-            <StackLayout>
-                <Label Text="First"
+        <StackLayout>
+            <Button Text="Element outside the AccessibilityContentView"></Button>
+            <local:AccessibilityContentView x:Name="acv">
+                <StackLayout>
+                    <Label Text="First"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
                        x:Name="first"
                        />
-                <CollectionView x:Name="third">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Label Text="{Binding .}"></Label>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-                <Label Text="Second"
+                    <CollectionView x:Name="third">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Label Text="{Binding .}"></Label>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <Label Text="Second"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                        x:Name="second"
                        />
-            </StackLayout>
-        </local:AccessibilityContentView>
+                </StackLayout>
+            </local:AccessibilityContentView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
