@@ -65,6 +65,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AccessibilityContentViewRenderer.cs" />
+    <Compile Include="AccessibilityFixesEffect.cs" />
     <Compile Include="CollectionViewRendererA11yHacks.cs" />
     <Compile Include="iOSA11yService.cs" />
     <Compile Include="Main.cs" />

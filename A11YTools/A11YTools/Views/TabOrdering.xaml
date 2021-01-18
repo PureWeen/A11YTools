@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:A11YTools.Views"
-             xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.Core"
              x:Class="A11YTools.Views.TabOrdering">
     <ContentPage.Content>
         <local:AccessibilityContentView x:Name="acv">
@@ -10,8 +9,8 @@
                 <Label Text="First"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"
-                       x:Name="first"
-                       />
+                       x:Name="first">
+                </Label>
                 <CollectionView x:Name="third">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -22,8 +21,7 @@
                 <Label Text="Second"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
-                       x:Name="second"
-                       />
+                       x:Name="second"/>
             </StackLayout>
         </local:AccessibilityContentView>
     </ContentPage.Content>

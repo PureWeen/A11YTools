@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effects="clr-namespace:A11YTools"
              x:Class="A11YTools.App">
     <!--
         Define global resources and styles here, that apply to all pages in your app.
@@ -9,6 +10,23 @@
         <ResourceDictionary>
             <Style TargetType="Label">
                 <Setter Property="TextColor" Value="Blue"></Setter>
+                <Setter Property="effects:AccessibilityFixesEffect.ApplyAccessibilityFixes" Value="True" />
+            </Style>
+            <Style TargetType="BindableObject" ApplyToDerivedTypes="True">
+                <Setter Property="effects:AccessibilityFixesEffect.ApplyAccessibilityFixes" Value="True" />
+            </Style>
+            <Style TargetType="Element" ApplyToDerivedTypes="True">                
+                <Setter Property="effects:AccessibilityFixesEffect.ApplyAccessibilityFixes" Value="True" />
+            </Style>
+            <Style TargetType="VisualElement" ApplyToDerivedTypes="True">
+                <Setter Property="IsVisible" Value="False"></Setter>
+                <Setter Property="effects:AccessibilityFixesEffect.ApplyAccessibilityFixes" Value="True" />
+            </Style>
+            <Style TargetType="Entry" ApplyToDerivedTypes="True">
+                <Setter Property="effects:AccessibilityFixesEffect.ApplyAccessibilityFixes" Value="True" />
+            </Style>
+            <Style TargetType="Page" ApplyToDerivedTypes="True">
+                <Setter Property="effects:AccessibilityFixesEffect.ApplyAccessibilityFixes" Value="True" />
             </Style>
         </ResourceDictionary>        
     </Application.Resources>
