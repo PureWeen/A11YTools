@@ -13,8 +13,8 @@ namespace A11YTools.Droid
         public void SetControlType(VisualElement element, ControlType controlType)
         {
             var renderer = Platform.GetRenderer(element);
-            var view = GetView(element);
-            
+            var view = element.GetViewForAccessibility();
+
             if (view == null)
                 return;
 
@@ -49,7 +49,7 @@ namespace A11YTools.Droid
         public void SetIsClickable(VisualElement element, bool isClickable, System.Action action)
         {
             var renderer = Platform.GetRenderer(element);
-            var view = GetView(element);
+            var view = element.GetViewForAccessibility();
             if (view == null)
                 return;
 
@@ -63,23 +63,9 @@ namespace A11YTools.Droid
         public void SetFocus(VisualElement element)
         {
             var renderer = Platform.GetRenderer(element);
-            var view = GetView(element);
+            var view = element.GetViewForAccessibility();
 
-            view?.SendAccessibilityEvent(Android.Views.Accessibility.EventTypes.ViewFocused);
-        }
-
-        global::Android.Views.View GetView(VisualElement visualElement)
-        {
-            var renderer = Platform.GetRenderer(visualElement);
-
-            if (visualElement is Layout)
-                return renderer?.View;
-            else if (renderer is ViewGroup vg && vg.ChildCount > 0)
-                return vg.GetChildAt(0);
-            else if (renderer != null)
-                return renderer.View;
-
-            return null;
+            view?.SendAccessibilityEvent(EventTypes.ViewFocused);
         }
     }
 }
