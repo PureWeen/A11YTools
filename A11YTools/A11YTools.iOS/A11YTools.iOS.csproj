@@ -63,6 +63,8 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AccessibilityContentViewRenderer.cs" />
+    <Compile Include="CollectionViewRendererA11yHacks.cs" />
     <Compile Include="iOSA11yService.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
