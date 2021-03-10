@@ -20,7 +20,11 @@ namespace A11YTools.iOS
         protected override void OnElementChanged(ElementChangedEventArgs<View> e)
         {
             base.OnElementChanged(e);
-            this.SetAccessibilityElements(NSArray.FromNSObjects(this.GetAccessibilityElements()?.ToArray()));
+
+            var result = this.GetAccessibilityElements();
+
+            if(result != null)
+                this.SetAccessibilityElements(NSArray.FromNSObjects(result.ToArray()));
         }
 
 
@@ -36,6 +40,9 @@ namespace A11YTools.iOS
             {
                 returnValue.Add(Platform.GetRenderer(view).NativeView);
             }
+
+            if (returnValue.Count == 0)
+                return null;
 
             return returnValue;
         }
