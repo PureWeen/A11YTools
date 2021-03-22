@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:A11YTools"
+             x:Class="A11YTools.Views.RadioButtonA11y">
+    <ContentPage.Content>
+        <StackLayout>
+            <local:SemanticGroupView>
+                <StackLayout AutomationProperties.IsInAccessibleTree="False">
+                    <local:SemanticView>
+                        <RadioButton GroupName="test" Content="Button 1">
+                            <RadioButton.ControlTemplate>
+                                <ControlTemplate>
+                                    <StackLayout>
+                                        <Image Source="xamarin_logo"></Image>
+                                        <Button Text="I am a Button"></Button>
+                                    </StackLayout>
+                                </ControlTemplate>
+                            </RadioButton.ControlTemplate>
+                        </RadioButton>
+                    </local:SemanticView>
+                    <local:SemanticView>
+                        <RadioButton BackgroundColor="Purple" ControlTemplate="{x:Static RadioButton.DefaultTemplate}" GroupName="test" Content="Button 2"></RadioButton>
+                    </local:SemanticView>
+                </StackLayout>
+            </local:SemanticGroupView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -5,6 +5,7 @@
        Title="A11YTools"
        x:Class="A11YTools.AppShell">
 
+    <ShellContent Title="Radio Button" ContentTemplate="{DataTemplate local:RadioButtonA11y}"></ShellContent>
     <ShellContent Title="Accessibility Control View" ContentTemplate="{DataTemplate local:TabOrdering}"></ShellContent>
     <ShellContent Title="Modify Control Type" ContentTemplate="{DataTemplate local:ModifyControlType}"></ShellContent>
     <ShellContent Title="Set Focus" ContentTemplate="{DataTemplate local:SetFocus}"></ShellContent>

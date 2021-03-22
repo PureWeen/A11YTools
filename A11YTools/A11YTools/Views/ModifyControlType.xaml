@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="A11YTools.Views.ModifyControlType">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BackgroundColor="Blue">
             <StackLayout x:Name="button" 
                          AutomationProperties.IsInAccessibleTree="True"                         
                          AutomationProperties.HelpText="I am a Button">

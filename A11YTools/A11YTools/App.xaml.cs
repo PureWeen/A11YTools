@@ -1,4 +1,5 @@
 ﻿
+using A11YTools.Views;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,7 +13,7 @@ namespace A11YTools
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new RadioButtonA11y();
         }
 
         protected override void OnStart()
