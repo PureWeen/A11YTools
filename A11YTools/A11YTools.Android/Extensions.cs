@@ -28,5 +28,18 @@ namespace A11YTools.Droid
 
             return null;
         }
+
+        public static global::Android.Views.View GetViewForAccessibility(this VisualElement visualElement, global::Android.Views.View renderer)
+        {
+            if (renderer == null)
+                return visualElement.GetViewForAccessibility();
+
+            if (visualElement is Layout)
+                return renderer;
+            else if (renderer is ViewGroup vg && vg.ChildCount > 0)
+                return vg.GetChildAt(0);
+
+            return renderer;
+        }
     }
 }
