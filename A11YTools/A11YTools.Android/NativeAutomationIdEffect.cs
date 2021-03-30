@@ -7,7 +7,6 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ResolutionGroupName("A11YTools")]
 [assembly: ExportEffect(typeof(A11YTools.Droid.NativeAutomationIdEffect), nameof(A11YTools.Droid.NativeAutomationIdEffect))]
 namespace A11YTools.Droid
 {

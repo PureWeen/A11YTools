@@ -7,13 +7,13 @@
     <ContentPage.Content>
         <StackLayout>
             <Button Text="Element outside the AccessibilityContentView"></Button>
-            <local:AccessibilityContentView x:Name="acv">
+            <local:SemanticView x:Name="acv">
                 <StackLayout>
                     <Label Text="First"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
-                       x:Name="first"
-                       />
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        x:Name="first" />
+
                     <CollectionView x:Name="third">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
@@ -21,13 +21,15 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
+
                     <Label Text="Second"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" 
-                       x:Name="second"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand"
+                            x:Name="second"
                        />
+
                 </StackLayout>
-            </local:AccessibilityContentView>
+            </local:SemanticView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

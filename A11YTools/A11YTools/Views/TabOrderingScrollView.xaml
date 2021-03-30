@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:A11YTools.Views"
+             x:Class="A11YTools.Views.TabOrderingScrollView">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Element outside the Semantic View"></Button>
+            <local:SemanticView x:Name="acv">
+                <StackLayout>
+
+                    <Label Text="Second"
+                            VerticalOptions="CenterAndExpand" 
+                            HorizontalOptions="CenterAndExpand"
+                            x:Name="second"
+                       />
+                    <ScrollView>
+                        <StackLayout>
+                            <Label HeightRequest="100" Text="Top Label"></Label>
+                            <Label x:Name="third" HeightRequest="100" Text="Third Control"></Label>
+                            <Label HeightRequest="900" Text="Middle LAbel" x:Name="middle"></Label>
+                            <BoxView BackgroundColor="Purple" HeightRequest="900" ></BoxView>
+                            <BoxView BackgroundColor="Green" HeightRequest="900" ></BoxView>
+                            <Label HeightRequest="900" Text="Label Below Stuff" x:Name="bottom"></Label>
+                        </StackLayout>
+                    </ScrollView>
+
+                    <Label Text="First"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        x:Name="first" />
+
+                </StackLayout>
+            </local:SemanticView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

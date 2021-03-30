@@ -9,14 +9,14 @@ using System.Text;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(AccessibilityContentView), typeof(AccessibilityContentViewRenderer))]
+[assembly: ExportRenderer(typeof(SemanticView), typeof(SemanticViewRenderer))]
 namespace A11YTools.Droid
 {
-    public class AccessibilityContentViewRenderer : ViewRenderer
+    public class SemanticViewRenderer : ViewRenderer
     {
-        AccessibilityContentView AccessibilityContentView => (AccessibilityContentView)Element;
+        SemanticView AccessibilityContentView => (SemanticView)Element;
 
-        public AccessibilityContentViewRenderer(Context context) : base(context)
+        public SemanticViewRenderer(Context context) : base(context)
         {
         }
 

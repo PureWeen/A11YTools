@@ -6,10 +6,10 @@ using Xamarin.Forms;
 
 namespace A11YTools.Views
 {
-    public class AccessibilityContentView : ContentView
+    public class SemanticView : ContentView
     {
         public static readonly BindableProperty ViewOrderProperty =
-            BindableProperty.Create(nameof(ViewOrder), typeof(IEnumerable), typeof(AccessibilityContentView), new View[0]);
+            BindableProperty.Create(nameof(ViewOrder), typeof(IEnumerable), typeof(SemanticView), new View[0]);
 
         public IEnumerable ViewOrder
         {
@@ -17,7 +17,7 @@ namespace A11YTools.Views
             set => SetValue(ViewOrderProperty, value);
         }
 
-        public AccessibilityContentView()
+        public SemanticView()
         {
             
         }

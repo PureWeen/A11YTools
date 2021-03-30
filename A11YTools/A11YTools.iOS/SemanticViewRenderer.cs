@@ -10,13 +10,11 @@ using UIKit;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(AccessibilityContentView), typeof(AccessibilityContentViewRenderer))]
+[assembly: ExportRenderer(typeof(SemanticView), typeof(SemanticViewRenderer))]
 namespace A11YTools.iOS
 {
-    public class AccessibilityContentViewRenderer : ViewRenderer, IUIAccessibilityContainer
+    public class SemanticViewRenderer : ViewRenderer, IUIAccessibilityContainer
     {
-
-
         protected override void OnElementChanged(ElementChangedEventArgs<View> e)
         {
             base.OnElementChanged(e);
@@ -28,7 +26,7 @@ namespace A11YTools.iOS
         }
 
 
-        AccessibilityContentView AccessibilityContentView => (AccessibilityContentView)Element;
+        SemanticView AccessibilityContentView => (SemanticView)Element;
         #region Accessibility
 
         private List<NSObject> GetAccessibilityElements()

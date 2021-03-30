@@ -58,7 +58,9 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessibilityContentViewRenderer.cs" />
+    <Compile Include="PlatformEffectBase.cs" />
+    <Compile Include="NativeSemanticEffect.cs" />
+    <Compile Include="SemanticViewRenderer.cs" />
     <Compile Include="AccessiblePageRenderer.cs" />
     <Compile Include="AndroidA11yService.cs" />
     <Compile Include="NativeAutomationIdEffect.cs" />

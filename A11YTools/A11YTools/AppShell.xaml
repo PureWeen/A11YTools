@@ -1,11 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-       xmlns:local="clr-namespace:A11YTools.Views"
+       xmlns:local="clr-namespace:A11YTools.Views" xmlns:local1="clr-namespace:A11YTools"
        Title="A11YTools"
        x:Class="A11YTools.AppShell">
 
-    <ShellContent Title="Accessibility Control View" ContentTemplate="{DataTemplate local:TabOrdering}"></ShellContent>
+    <ShellContent Title="Set AutomationId to TagId">
+        <ContentPage>
+            <StackLayout>
+                <Label Text="I am a heading" local1:SemanticEffect.IsHeading="true">
+                </Label>
+                <StackLayout local1:AutomationIdEffect.AutomationId="SomeLayout">
+                    <Label Text="I am a Label" local1:AutomationIdEffect.AutomationId="Field">
+                    </Label>
+                </StackLayout>
+                <Label Text="I am a heading 2" local1:SemanticEffect.IsHeading="true">
+                </Label>
+            </StackLayout>
+        </ContentPage>
+    </ShellContent>
+    <FlyoutItem Title="Semantic Ordering View">
+        <ShellContent Title="Scroll View" ContentTemplate="{DataTemplate local:TabOrderingScrollView}"></ShellContent>
+        <ShellContent Title="Collection View" ContentTemplate="{DataTemplate local:TabOrdering}"></ShellContent>
+    </FlyoutItem>
     <ShellContent Title="Modify Control Type" ContentTemplate="{DataTemplate local:ModifyControlType}"></ShellContent>
     <ShellContent Title="Set Focus" ContentTemplate="{DataTemplate local:SetFocus}"></ShellContent>
 </Shell>
