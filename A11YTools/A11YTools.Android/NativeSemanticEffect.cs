@@ -1,4 +1,5 @@
 ﻿using A11YTools.Droid;
+using AndroidX.Core.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +17,7 @@ namespace A11YTools.Droid
         protected override void Update(Android.Views.View view, A11YTools.NativeSemanticEffect effect)
         {
             bool isHeading = SemanticEffect.GetIsHeading(Element);
-            view.AccessibilityHeading = SemanticEffect.GetIsHeading(Element);
+            ViewCompat.SetAccessibilityHeading(view, isHeading);
         }
 
 

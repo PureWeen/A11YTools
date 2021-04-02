@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,6 +12,10 @@ namespace A11YTools
         public App()
         {
             InitializeComponent();
+
+            Xamarin.Forms.Device.SetFlags(new List<string> {
+                "Shell_UWP_Experimental",
+                "AccessibilityExperimental"});
 
             MainPage = new AppShell();
         }
