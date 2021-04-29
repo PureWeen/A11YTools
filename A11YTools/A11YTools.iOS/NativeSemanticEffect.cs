@@ -19,7 +19,7 @@ namespace A11YTools.iOS
             if(isHeading)
                 view.AccessibilityTraits |= UIAccessibilityTrait.Header;
             else
-                view.AccessibilityTraits |= ~UIAccessibilityTrait.Header;
+                view.AccessibilityTraits &= ~UIAccessibilityTrait.Header;
         }
 
 

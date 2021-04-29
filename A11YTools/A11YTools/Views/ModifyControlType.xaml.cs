@@ -23,17 +23,20 @@ namespace A11YTools.Views
         {
             base.OnAppearing();
 
-            // the renderers need to have been set for this code to work
-            // This is temporary just to validate that the methods work
-            Device.BeginInvokeOnMainThread(async () =>
+            if (_a11yService != null)
             {
-                await Task.Delay(1000);
-                _a11yService.SetControlType(button, ControlType.Button);
-                _a11yService.SetIsClickable(clickable, true, async () =>
+                // the renderers need to have been set for this code to work
+                // This is temporary just to validate that the methods work
+                Device.BeginInvokeOnMainThread(async () =>
                 {
-                    await DisplayAlert("I only execute on Android", "Way to click me", "Cancel");
+                    await Task.Delay(1000);
+                    _a11yService.SetControlType(button, ControlType.Button);
+                    _a11yService.SetIsClickable(clickable, true, async () =>
+                    {
+                        await DisplayAlert("I only execute on Android", "Way to click me", "Cancel");
+                    });
                 });
-            });
+            }
         }
 
         private async void OnButtonTapped(object sender, EventArgs e)
