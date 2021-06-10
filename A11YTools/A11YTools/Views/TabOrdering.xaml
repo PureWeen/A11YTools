@@ -9,7 +9,8 @@
             <Button Text="Element outside the AccessibilityContentView"></Button>
             <local:SemanticView x:Name="acv">
                 <StackLayout>
-                    <Label Text="First"
+                    <Label
+                        Text="First"
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="CenterAndExpand"
                         x:Name="first" />
@@ -22,11 +23,11 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
 
-                    <Label Text="Second"
-                            VerticalOptions="CenterAndExpand" 
-                            HorizontalOptions="CenterAndExpand"
-                            x:Name="second"
-                       />
+                    <Label
+                        Text="Second"
+                        VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand"
+                        x:Name="second" />
 
                 </StackLayout>
             </local:SemanticView>

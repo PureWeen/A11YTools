@@ -10,34 +10,43 @@
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnButtonTapped"></TapGestureRecognizer>
                 </StackLayout.GestureRecognizers>
-                <Label Text="Stack"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-                <Label Text="Layout"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-                <Label Text="Button"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                <Label
+                    Text="Stack"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    Text="Layout"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    Text="Button"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
             </StackLayout>
-            <StackLayout 
+
+             <StackLayout 
                 AutomationProperties.IsInAccessibleTree="True"
                 AutomationProperties.HelpText="I am a Clickable" 
                 x:Name="clickable">
                 <StackLayout.GestureRecognizers>
                     <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OnButtonClicked"></TapGestureRecognizer>
                 </StackLayout.GestureRecognizers>
-                <Label Text="Stack"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-                <Label Text="Layout"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-                <Label Text="Clickable"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                <Label
+                    Text="Stack"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    Text="Layout"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
+                <Label
+                    Text="Clickable"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand" />
             </StackLayout>
+
             <TimePicker BackgroundColor="Purple"></TimePicker>
+
             <Button Text="Hello"></Button>
         </StackLayout>
     </ContentPage.Content>

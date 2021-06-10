@@ -5,8 +5,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="theLabel" Text="Hello I am the Label"></Label>
-            <Button Text="Set Accessibility Focus To Label"
-                    Clicked="Button_Clicked"
+            <Button
+                Text="Set Accessibility Focus To Label"
+                Clicked="Button_Clicked"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
