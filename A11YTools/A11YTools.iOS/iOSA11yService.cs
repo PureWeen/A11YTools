@@ -3,12 +3,21 @@ using Xamarin.Forms;
 using A11YTools.iOS;
 using UIKit;
 using Xamarin.Forms.Platform.iOS;
+using Foundation;
 
 [assembly: Dependency(typeof(iOSA11yService))]
 namespace A11YTools.iOS
 {
     public class iOSA11yService : IA11yService
     {
+        public void SetAnnouncement(string text)
+        {
+            if (!UIAccessibility.IsVoiceOverRunning)
+                return;
+
+            UIAccessibility.PostNotification(UIAccessibilityPostNotification.Announcement, new NSString(text));
+        }
+
         public void SetFocus(VisualElement element)
         {
             var nativeView = Platform.GetRenderer(element).NativeView;

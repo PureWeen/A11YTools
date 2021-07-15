@@ -25,4 +25,5 @@
     </FlyoutItem>
     <ShellContent Title="Modify Control Type" ContentTemplate="{DataTemplate local:ModifyControlType}"></ShellContent>
     <ShellContent Title="Set Focus" ContentTemplate="{DataTemplate local:SetFocus}"></ShellContent>
+    <ShellContent Title="Set Announcement" ContentTemplate="{DataTemplate local:SetAnnouncement}"></ShellContent>
 </Shell>
