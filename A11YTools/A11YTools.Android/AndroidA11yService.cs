@@ -70,13 +70,13 @@ namespace A11YTools.Droid
 
         public void SetAnnouncement(string text)
         {
-			AccessibilityManager manager = (AccessibilityManager)Android.App.Application.Context.GetSystemService(Android.App.Application.AccessibilityService);
+            AccessibilityManager manager = (AccessibilityManager)Android.App.Application.Context.GetSystemService(Android.App.Application.AccessibilityService);
 
-			if (!(manager.IsEnabled || manager.IsTouchExplorationEnabled))
-				return;
+            if (!(manager.IsEnabled || manager.IsTouchExplorationEnabled))
+                return;
 
-			// Sends the accessibility event to announce.
-			AccessibilityEvent e = AccessibilityEvent.Obtain();
+            // Sends the accessibility event to announce.
+            AccessibilityEvent e = AccessibilityEvent.Obtain();
             e.EventType = EventTypes.Announcement;
             e.Text.Add(new Java.Lang.String(text));
             manager.SendAccessibilityEvent(e);
