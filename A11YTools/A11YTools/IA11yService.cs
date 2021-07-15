@@ -12,6 +12,12 @@ namespace A11YTools
     public interface IA11yService
     {
         /// <summary>
+        /// Tell screen reader to read out the text specified
+        /// </summary>
+        /// <param name="text"></param>
+        void SetAnnouncement(string text);
+
+        /// <summary>
         /// Force accessibility focus to specified element
         /// </summary>
         /// <param name="element"></param>
