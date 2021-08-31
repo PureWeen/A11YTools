@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,7 +17,16 @@ namespace A11YTools.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            _a11yService.SetFocus(theLabel);
+            _a11yService.SetFocus(afcLabel);
+        }
+        private void Button2_Clicked(object sender, EventArgs e)
+        {
+            _a11yService.SetFocus(afcLabel2);
+        }
+
+        private void Button3_Clicked(object sender, EventArgs e)
+        {
+            _a11yService.SetFocus(theButton1);
         }
     }
 }
