@@ -18,7 +18,6 @@ namespace A11YTools.UWP
 
             if (e.OldElement != null && accessibilityHiddenBtn != null)
             {
-                accessibilityHiddenBtn.Click -= AccessibilityHiddenBtn_Click;
                 accessibilityHiddenBtn.GotFocus -= AccessibilityHiddenBtn_GotFocus;
                 accessibilityHiddenBtn.LostFocus -= AccessibilityHiddenBtn_LostFocus;
                 accessibilityHiddenBtn = null;
@@ -31,10 +30,9 @@ namespace A11YTools.UWP
                 accessibilityHiddenBtn = new Windows.UI.Xaml.Controls.Button();
                 accessibilityHiddenBtn.IsTabStop = e.NewElement.IsTabStop;
                 accessibilityHiddenBtn.IsHitTestVisible = false;
-                accessibilityHiddenBtn.IsEnabled = e.NewElement.IsEnabled;
+                accessibilityHiddenBtn.IsEnabled = false;
                 accessibilityHiddenBtn.Visibility = e.NewElement.IsTabStop && e.NewElement.IsEnabled && e.NewElement.IsVisible ? Visibility.Visible : Visibility.Collapsed;
                 accessibilityHiddenBtn.UseSystemFocusVisuals = false;
-                accessibilityHiddenBtn.Click += AccessibilityHiddenBtn_Click;
                 accessibilityHiddenBtn.GotFocus += AccessibilityHiddenBtn_GotFocus;
                 accessibilityHiddenBtn.LostFocus += AccessibilityHiddenBtn_LostFocus;
                 Canvas.SetZIndex(accessibilityHiddenBtn, -1);
@@ -47,7 +45,6 @@ namespace A11YTools.UWP
         {
             if (disposing && Control != null)
             {
-                accessibilityHiddenBtn.Click -= AccessibilityHiddenBtn_Click;
                 accessibilityHiddenBtn.GotFocus -= AccessibilityHiddenBtn_GotFocus;
                 accessibilityHiddenBtn.LostFocus -= AccessibilityHiddenBtn_LostFocus;
                 accessibilityHiddenBtn = null;
@@ -73,14 +70,12 @@ namespace A11YTools.UWP
 
         private void AccessibilityHiddenBtn_GotFocus(object sender, RoutedEventArgs e)
         {
+            Element?.OnAccessibilityGotFocus();
         }
 
         private void AccessibilityHiddenBtn_LostFocus(object sender, RoutedEventArgs e)
         {
-        }
-
-        private void AccessibilityHiddenBtn_Click(object sender, RoutedEventArgs e)
-        {
+            Element?.OnAccessibilityLostFocus();
         }
     }
 }
