@@ -58,6 +58,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessibleFocusBlockRenderer.cs" />
     <Compile Include="PlatformEffectBase.cs" />
     <Compile Include="NativeSemanticEffect.cs" />
     <Compile Include="SemanticViewRenderer.cs" />

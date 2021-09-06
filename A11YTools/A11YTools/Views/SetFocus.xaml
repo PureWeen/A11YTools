@@ -1,15 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="A11YTools.Views.SetFocus">
+             x:Class="A11YTools.Views.SetFocus"
+             xmlns:local="clr-namespace:A11YTools.Views">
     <ContentPage.Content>
+
         <StackLayout>
-            <Label x:Name="theLabel" Text="Hello I am the Label"></Label>
-            <Button
-                Text="Set Accessibility Focus To Label"
-                Clicked="Button_Clicked"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <local:AccessibleFocusBlock x:Name="afcLabel" 
+                                        AutomationProperties.IsInAccessibleTree="True"
+                                        AutomationProperties.LabeledBy="{x:Reference theLabel}">
+                <Label x:Name="theLabel" 
+                       Text="Hello I am the Label" />
+            </local:AccessibleFocusBlock>
+
+            <local:AccessibleFocusBlock x:Name="afcLabel2"
+                                        AutomationProperties.IsInAccessibleTree="True"
+                                        AutomationProperties.LabeledBy="{x:Reference theLabel2}">
+                <Label x:Name="theLabel2" 
+                       Text="Hello I am the Label 2" />
+            </local:AccessibleFocusBlock>
+
+            <Button x:Name="theButton1"
+                    Text="Set Accessibility Focus To Label"
+                    Clicked="Button_Clicked"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+
+            <Button x:Name="theButton2"
+                    Text="Set Accessibility Focus To Label 2"
+                    Clicked="Button2_Clicked"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+
+            <Button x:Name="theButton3"
+                    Text="Set Accessibility Focus To Button 1"
+                    Clicked="Button3_Clicked"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+
         </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

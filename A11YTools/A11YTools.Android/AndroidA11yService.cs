@@ -65,7 +65,7 @@ namespace A11YTools.Droid
             var renderer = Platform.GetRenderer(element);
             var view = element.GetViewForAccessibility();
 
-            view?.SendAccessibilityEvent(EventTypes.ViewAccessibilityFocused);
+            view?.SendAccessibilityEvent(EventTypes.ViewFocused);
         }
 
         public void SetAnnouncement(string text)
