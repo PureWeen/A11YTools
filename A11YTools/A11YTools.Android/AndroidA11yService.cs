@@ -12,7 +12,6 @@ namespace A11YTools.Droid
     {
         public void SetControlType(VisualElement element, ControlType controlType)
         {
-            var renderer = Platform.GetRenderer(element);
             var view = element.GetViewForAccessibility();
 
             if (view == null)
@@ -62,10 +61,8 @@ namespace A11YTools.Droid
 
         public void SetFocus(VisualElement element)
         {
-            var renderer = Platform.GetRenderer(element);
             var view = element.GetViewForAccessibility();
-
-            view?.SendAccessibilityEvent(EventTypes.ViewAccessibilityFocused);
+            view?.SendAccessibilityEvent((EventTypes)(int)WindowsChange.AccessibilityFocused);
         }
 
         public void SetAnnouncement(string text)
